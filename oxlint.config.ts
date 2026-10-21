@@ -24,7 +24,12 @@ export default defineConfig({
     }),
     effect.configs.recommended,
   ],
-  ignorePatterns: [...(core.ignorePatterns ?? []), ".deepsec/**"],
+  ignorePatterns: [
+    ...(core.ignorePatterns ?? []),
+    ".deepsec/**",
+    // Independent package with its own dependencies (see docs/package.json).
+    "docs/**",
+  ],
   plugins: [
     "typescript",
     "unicorn",

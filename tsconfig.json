@@ -1,5 +1,7 @@
 {
   "include": ["**/*.ts", "**/*.tsx", ".void/env.d.ts"],
+  // docs/ is an independent package with its own dependencies.
+  "exclude": ["node_modules", "docs"],
   "compilerOptions": {
     "target": "ES2022",
     "jsx": "react-jsx",
